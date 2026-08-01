@@ -34,11 +34,26 @@ body {
     width: 50px;
 }
 
+.result {
+    color: white;
+    font-size: 25px;
+    font-family: arial;
+    margin-top: 70px;
+    font-weight: bold;
+}
+ 
 .stats {
     color: white;
     font-family: arial;
     font-size: 16px;
-    margin-top: 80px;
+    margin-top: 25px;
+}
+.moves {
+    color: white;
+    font-family: arial;
+    font-size: 16px;
+    margin-top: 25px;
+    margin-bottom: 60px;
 }
 
 .reset-button {
