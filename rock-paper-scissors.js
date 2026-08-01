@@ -5,6 +5,7 @@ let ties = 0;
 function playRock() {
     const RandomNumber = Math.random();
     let ComputerMove = '';
+    const YourMove = 'Rock';
 
 
     if (RandomNumber >= 0 && RandomNumber < 1 / 3) {
@@ -31,8 +32,6 @@ function playRock() {
         result = 'You win';
     }
 
-    alert(`You Picked Rock. Computer Picked ${ComputerMove}. ${result}.`);
-
     if (result === 'You win') {
         wins++;
     }
@@ -42,8 +41,27 @@ function playRock() {
     if (result === 'Tie') {
         ties++;
     }
-
+    
     document.querySelector('.stats').innerHTML = `Wins: ${wins}, Losses: ${losses}, Ties: ${ties}`;
+    if (result === 'You win') {
+        document.querySelector('.result').innerHTML = 'You win';
+    }
+    if (result === 'You lose') {
+        document.querySelector('.result').innerHTML = 'You lose';
+    }
+    if (result === 'Tie') {
+        document.querySelector('.result').innerHTML = 'Tie';
+    }
+
+    if (ComputerMove === 'Rock') {
+        document.querySelector('.moves').innerHTML = `You <img src = "images/rock-emoji.png" class = "rock-image">  <img src = "images/rock-emoji.png" class = "rock-image"> Computer`
+    }
+    if (ComputerMove === 'Paper') {
+        document.querySelector('.moves').innerHTML = `You <img src = "images/rock-emoji.png" class = "rock-image">  <img src = "images/paper-emoji.png" class = "paper-image"> Computer`
+    }
+    if (ComputerMove === 'Scissors') {
+        document.querySelector('.moves').innerHTML = `You <img src = "images/rock-emoji.png" class = "rock-image">  <img src = "images/scissors-emoji.png" class = "scissors-image"> Computer`
+    }
 }
 
 
@@ -59,7 +77,7 @@ function playPaper() {
     else if (RandomNumber >= 1 / 3 && RandomNumber < 2 / 3) {
         ComputerMove = 'Paper';
     }
-
+    
     else if (RandomNumber >= 2 / 3 && RandomNumber < 1) {
         ComputerMove = 'Scissors'
     }
@@ -76,8 +94,6 @@ function playPaper() {
         result = 'You lose';
     }
     
-    alert(`You Picked Paper. Computer Picked ${ComputerMove}. ${result}.`);
-    
     if (result === 'You win') {
         wins++;
     }
@@ -88,6 +104,24 @@ function playPaper() {
         ties++;
     }
     document.querySelector('.stats').innerHTML = `Wins: ${wins}, Losses: ${losses}, Ties: ${ties}`;
+    if (result === 'You win') {
+        document.querySelector('.result').innerHTML = 'You win';
+    }
+    if (result === 'You lose') {
+        document.querySelector('.result').innerHTML = 'You lose';
+    }
+    if (result === 'Tie') {
+        document.querySelector('.result').innerHTML = 'Tie';
+    }
+    if (ComputerMove === 'Rock') {
+        document.querySelector('.moves').innerHTML = `You <img src = "images/paper-emoji.png" class = "rock-image">  <img src = "images/rock-emoji.png" class = "rock-image"> Computer`
+    }
+    if (ComputerMove === 'Paper') {
+        document.querySelector('.moves').innerHTML = `You <img src = "images/paper-emoji.png" class = "rock-image">  <img src = "images/paper-emoji.png" class = "paper-image"> Computer`
+    }
+    if (ComputerMove === 'Scissors') {
+        document.querySelector('.moves').innerHTML = `You <img src = "images/paper-emoji.png" class = "rock-image">  <img src = "images/scissors-emoji.png" class = "scissors-image"> Computer`
+    }
 }
 
 function playScissor() {
@@ -120,8 +154,6 @@ function playScissor() {
         result = 'Tie';
     }
     
-    alert(`You Picked Scissors. Computer Picked ${ComputerMove}. ${result}.`);
-    
     if (result === 'You win') {
         wins++;
     }
@@ -132,12 +164,32 @@ function playScissor() {
         ties++;
     }
     document.querySelector('.stats').innerHTML = `Wins: ${wins}, Losses: ${losses}, Ties: ${ties}`;
+    if (result === 'You win') {
+        document.querySelector('.result').innerHTML = 'You win';
+    }
+    if (result === 'You lose') {
+        document.querySelector('.result').innerHTML = 'You lose';
+    }
+    if (result === 'Tie') {
+        document.querySelector('.result').innerHTML = 'Tie';
+    }
+}
+if (ComputerMove === 'Rock') {
+    document.querySelector('.moves').innerHTML = `You <img src = "images/scissors-emoji.png" class = "rock-image">  <img src = "images/rock-emoji.png" class = "rock-image"> Computer`
+}
+if (ComputerMove === 'Paper') {
+    document.querySelector('.moves').innerHTML = `You <img src = "images/scissors-emoji.png" class = "rock-image">  <img src = "images/paper-emoji.png" class = "paper-image"> Computer`
+}
+if (ComputerMove === 'Scissors') {
+    document.querySelector('.moves').innerHTML = `You <img src = "images/scissors-emoji.png" class = "rock-image">  <img src = "images/scissors-emoji.png" class = "scissors-image"> Computer`
 }
 
 function resetScore() {
     wins = 0;
     losses = 0;
     ties = 0;
-
+    
     document.querySelector('.stats').innerHTML = `Wins: 0, Losses: 0, Ties: 0`
+    document.querySelector('.result').innerHTML = ''
+    document.querySelector('.moves').innerHTML = ''
 }
